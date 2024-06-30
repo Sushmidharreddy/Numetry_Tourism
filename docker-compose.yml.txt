@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./TravelBlissFrontend-master
+    ports:
+      - "5137:80"
+  
+  backend:
+    build:
+      context: ./ToursandTravels
+    ports:
+      - "9898:8080"
+    depends_on:
+      - TravelBlissFrontend-master
